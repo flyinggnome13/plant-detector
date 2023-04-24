@@ -34,7 +34,7 @@ const App: React.FC = () => {
           />
         </div>
         <button className="CaptureButton" onClick={captureAndIdentifyPlant}>
-          Сфотографувати і знайти рослину
+          Сфотографувати і знайти рослину 
         </button>
         {plantImage && <img alt="plant" className="plant-image" src={plantImage}/>}
         {plantName && <div className="PlantResult">Назва рослини: {plantName}</div>}
