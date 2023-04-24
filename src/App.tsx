@@ -37,7 +37,6 @@ const App: React.FC = () => {
         {plantName && <div className="PlantResult">Назва рослини: {plantName}</div>}
         <p>Стаття про рослину:</p>
         {plantName && <iframe width="100%" height="500vh" title={plantName ?? ''} src={`https://uk.m.wikipedia.org/wiki/${plantName.split(" ")[0]}`}/>}
-        {plantName && <iframe width="100%" height="500vh" title={plantName ?? ''} src={`https://agrarii-razom.com.ua/plants/${plantName.split(" ")[0]}`}/>}
       </div>
   );
 };
