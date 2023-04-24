@@ -24,6 +24,7 @@ const App: React.FC = () => {
         <div className="WebcamContainer">
           <Webcam
               audio={false}
+              reversed
               ref={webcamRef}
               screenshotFormat="image/jpeg"
               className="Webcam"
