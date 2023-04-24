@@ -1,25 +1,33 @@
 name: Deploy to GitHub Pages
 on: 
- push:
-  branches:
-    - master
+  push:
+    branches:
+      - master
 jobs:
-    build-and-deploy:
-      runs-on: ubuntu-latest
-      steps:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: Build
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install and Build
         run: |
-          npm install
-          npm run-script build
+          npm ci
+          npm run build
         env:
           REACT_APP_PLANT_ID_KEY: ${{ secrets.REACT_APP_PLANT_ID_KEY }}
-          
+
       - name: Deploy
-        uses: flyinggnome13/plant-detector@releases/tag/v1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
-          BRANCH: gh-pages
-          FOLDER: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy to GitHub Pages'
