@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <button className="CaptureButton" onClick={captureAndIdentifyPlant}>
           Сфотографувати і знайти рослину
         </button>
-        {plantImage && <img className="plant-image" src={plantImage}/>}
+        {plantImage && <img alt="image" className="plant-image" src={plantImage}/>}
         {plantName && <div className="PlantResult">Назва рослини: {plantName}</div>}
         {plantName && <p>Стаття про рослину:</p>}
         {plantName && <iframe width="100%" height="500vh" title={plantName ?? ''} src={`https://uk.m.wikipedia.org/wiki/${plantName.split(" ")[0]}`}/>}
