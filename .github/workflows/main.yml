@@ -23,7 +23,7 @@ jobs:
        REACT_APP_PLANT_ID_KEY: ${{ secrets.REACT_APP_APIKey }}
 
     - name: Deploy
-      uses: flyinggnome13/plant-detector
+      uses: flyinggnome13/plant-detector@releases/v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
