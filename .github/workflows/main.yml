@@ -22,12 +22,9 @@ jobs:
         env:
           REACT_APP_PLANT_ID_KEY: ${{ secrets.REACT_APP_PLANT_ID_KEY }}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy 
+        uses: JamesIves/github-pages-deploy-action@3.5.5
         with:
-          github_token: ${{ secrets.REACT_APP_GH_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy to GitHub Pages'
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           BRANCH: gh-pages
+           FOLDER: build
