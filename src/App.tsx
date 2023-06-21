@@ -39,7 +39,7 @@ const App: React.FC = () => {
         {plantImage && <img alt="plant" className="plant-image" src={plantImage}/>}
         {plantName && <div className="PlantResult">Назва рослини: {plantName}</div>}
         {plantName && <p>Стаття про рослину:</p>}
-        {plantName && <iframe width="100%" height="500vh" title={plantName ?? ''} src={`https://uk.m.wikipedia.org/wiki/${plantName.split(" ")[0]}`}/>}
+        {plantName && <iframe width="100%" height="501vh" title={plantName ?? ''} src={`https://uk.m.wikipedia.org/wiki/${plantName.split(" ")[0]}`}/>}
       </div>
   );
 };
